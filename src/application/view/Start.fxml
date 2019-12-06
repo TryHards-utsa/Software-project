@@ -7,6 +7,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CustomerPortal">
    <children>
-      <Label layoutX="276.0" layoutY="158.0" text="Nice" />
+      <Button layoutX="317.0" layoutY="307.0" mnemonicParsing="false" onAction="#registrationhandle" text="Sign up" />
+      <Button layoutX="200.0" layoutY="307.0" mnemonicParsing="false" onAction="#signInhandle" text="Sign in" />
    </children>
 </AnchorPane>

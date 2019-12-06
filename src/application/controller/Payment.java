@@ -2,25 +2,16 @@ package application.controller;
 
 import application.Main;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 
-public class CustomerPortal implements EventHandler<ActionEvent> {
+public class Payment {
 
-//	@FXML 
-//	private Button signUp;
 	
-//	@FXML 
-//	private Button signIn; 
-	
-
-	public void registrationhandle(ActionEvent event) {
+	public void driverassignhandle(ActionEvent event) {
 		try {
-			Parent root = FXMLLoader.load( getClass().getResource( "../view/Registration.fxml" ) ); 
+			Parent root = FXMLLoader.load( getClass().getResource( "../view/DriverAssign.fxml" ) ); 
 			Scene scene = new Scene( root, 600, 600 );
 			Main.stage.setScene(scene);
 			Main.stage.show();
@@ -29,9 +20,8 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 	}
-
-
-	public void signInhandle(ActionEvent event) {
+	
+	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
 
 			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
@@ -43,12 +33,6 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-	}
-
-	@Override
-	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
 		
 	}
 	

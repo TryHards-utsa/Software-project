@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.DriverAssign">
+   <children>
+      <Button layoutX="427.0" layoutY="140.0" mnemonicParsing="false" onAction="#storeviewhandle" text="Back to Store" />
+      <Button layoutX="427.0" layoutY="234.0" mnemonicParsing="false" onAction="#exithandle" text="Exit Application" />
+      <TextArea layoutX="50.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+      <Text layoutX="50.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of available drivers" />
+      <Text layoutX="50.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Processed groceries, one of our available drivers are on there way" />
+      <ProgressBar layoutX="50.0" layoutY="439.0" prefHeight="18.0" prefWidth="517.0" progress="0.05" />
+   </children>
+</AnchorPane>

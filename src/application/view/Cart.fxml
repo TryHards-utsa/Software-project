@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.Checkout">
+   <children>
+      <AnchorPane layoutY="-9.0" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <TextArea layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
+            <Text layoutX="200.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" />
+            <Button layoutX="67.0" layoutY="495.0" mnemonicParsing="false" onAction="#StoreViewFromCarthandle" text="Go back" />
+            <Button layoutX="444.0" layoutY="495.0" mnemonicParsing="false" onAction="#paymenthandle" text="payment" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

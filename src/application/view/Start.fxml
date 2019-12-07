@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,7 +8,17 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CustomerPortal">
    <children>
-      <Button layoutX="317.0" layoutY="307.0" mnemonicParsing="false" onAction="#registrationhandle" text="Sign up" />
-      <Button layoutX="200.0" layoutY="307.0" mnemonicParsing="false" onAction="#signInhandle" text="Sign in" />
+      <Button layoutX="241.0" layoutY="495.0" mnemonicParsing="false" onAction="#registrationhandle" text="Sign up!" />
+      <Button layoutX="78.0" layoutY="495.0" mnemonicParsing="false" onAction="#signInhandle" text="Sign in" />
+      <TextField layoutX="78.0" layoutY="379.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField layoutX="78.0" layoutY="438.0" prefHeight="25.0" prefWidth="220.0" />
+      <Text layoutX="241.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dont have an account with us?" />
+      <Text layoutX="39.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+      <Text layoutX="17.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="49.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to GroceryBuddy!">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

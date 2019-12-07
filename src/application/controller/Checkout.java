@@ -7,18 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class Checkout {
-
-	public void carthandle(ActionEvent event) {
-		try {
-			Parent root = FXMLLoader.load( getClass().getResource( "../view/Cart.fxml" ) ); 
-			Scene scene = new Scene( root, 600, 600 );
-			Main.stage.setScene(scene);
-			Main.stage.show();
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {

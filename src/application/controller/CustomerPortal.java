@@ -7,15 +7,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+//import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class CustomerPortal implements EventHandler<ActionEvent> {
 
-//	@FXML 
-//	private Button signUp;
-	
-//	@FXML 
-//	private Button signIn; 
+	@FXML
+	TextField startemail;
+	@FXML
+	PasswordField startpassword; 
+	@FXML
+	Text error;
 	
 
 	public void registrationhandle(ActionEvent event) {
@@ -34,10 +38,17 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 	public void signInhandle(ActionEvent event) {
 		try {
 
-			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 600 );
-			Main.stage.setScene(scene1);
-			Main.stage.show();
+			if(startemail.getText().trim().isEmpty() && startpassword.getText().trim().isEmpty()) {
+				error.setText("Either Email or password was not inputed correctly, please try again");
+			
+				
+			}else {
+			
+				Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
+				Scene scene1 = new Scene( root1, 600, 600 );
+				Main.stage.setScene(scene1);
+				Main.stage.show();
+			}
 			
 			
 		} catch(Exception e) {

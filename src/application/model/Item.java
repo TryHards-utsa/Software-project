@@ -2,7 +2,6 @@ package application.model;
 
 import java.util.ArrayList;
 
-public class Customer {
+public class Item {
 	String name;
-	ArrayList<items> cart;
 }

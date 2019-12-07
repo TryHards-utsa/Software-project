@@ -14,5 +14,6 @@
       <Button layoutX="234.0" layoutY="255.0" mnemonicParsing="false" onAction="#driverassignhandle" text="process payment" />
       <Label layoutX="112.0" layoutY="133.0" text="Card number: " />
       <Label layoutX="113.0" layoutY="182.0" text="Security code:" />
+      <Text layoutX="286.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

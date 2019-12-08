@@ -25,7 +25,7 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 	public void registrationhandle(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load( getClass().getResource( "../view/Registration.fxml" ) ); 
-			Scene scene = new Scene( root, 600, 600 );
+			Scene scene = new Scene( root, 600, 450 );
 			Main.stage.setScene(scene);
 			Main.stage.show();
 			
@@ -45,7 +45,7 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 			}else {
 			
 				Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
-				Scene scene1 = new Scene( root1, 600, 600 );
+				Scene scene1 = new Scene( root1, 600, 470 );
 				Main.stage.setScene(scene1);
 				Main.stage.show();
 			}

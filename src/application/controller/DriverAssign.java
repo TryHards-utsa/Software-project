@@ -15,7 +15,7 @@ public class DriverAssign {
 		try {
 			
 			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 600 );
+			Scene scene1 = new Scene( root1, 600, 470 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			

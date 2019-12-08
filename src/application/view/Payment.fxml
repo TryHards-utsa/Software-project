@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -8,12 +9,30 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Payment">
    <children>
-      <TextField fx:id="cardNumber" layoutX="207.0" layoutY="128.0" />
-      <TextField fx:id="securityCode" layoutX="207.0" layoutY="177.0" />
-      <Text layoutX="124.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your debit or credit card to proceed transaction" />
-      <Button layoutX="234.0" layoutY="255.0" mnemonicParsing="false" onAction="#driverassignhandle" text="process payment" />
-      <Label layoutX="112.0" layoutY="133.0" text="Card number: " />
-      <Label layoutX="113.0" layoutY="182.0" text="Security code:" />
-      <Text layoutX="286.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Pictures/software/VeggieWallpaper4.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="cardNumber" layoutX="207.0" layoutY="264.0" />
+      <TextField fx:id="securityCode" layoutX="207.0" layoutY="309.0" />
+      <Text layoutX="27.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your debit or credit card to proceed transaction">
+         <font>
+            <Font size="22.0" />
+         </font></Text>
+      <Button layoutX="207.0" layoutY="349.0" mnemonicParsing="false" onAction="#driverassignhandle" prefHeight="46.0" prefWidth="149.0" text="process payment">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="120.0" layoutY="267.0" text="Card number: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="120.0" layoutY="311.0" text="Security code:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Text fx:id="error" layoutX="88.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button layoutX="14.0" layoutY="544.0" mnemonicParsing="false" onAction="#StoreViewFromCarthandle" text="Go back to cart" />
    </children>
 </AnchorPane>

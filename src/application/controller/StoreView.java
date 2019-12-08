@@ -23,8 +23,12 @@ public class StoreView implements Initializable {
 	
 	public void carthandle(ActionEvent event) {
 		try {
-			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Cart.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 350 );
+			FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/Cart.fxml" ) );
+			Parent root1 = loader.load();
+			Checkout tmp = (Checkout) loader.getController();
+			tmp.setCartList(cartList);
+			
+			Scene scene1 = new Scene( root1, 600, 600 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 		} catch(Exception e) {

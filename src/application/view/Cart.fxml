@@ -14,7 +14,6 @@
             <Image url="@../../../../../Pictures/software/cartWallpaper.jpg" />
          </image>
       </ImageView>
-      <TextArea layoutX="141.0" layoutY="33.0" prefHeight="283.0" prefWidth="318.0" />
       <Button layoutX="27.0" layoutY="259.0" mnemonicParsing="false" onAction="#StoreViewFromCarthandle" text="Back to store" />
       <Button layoutX="477.0" layoutY="259.0" mnemonicParsing="false" onAction="#paymenthandle" prefHeight="25.0" prefWidth="95.0" text="Purchase" />
       <Text fill="WHITE" layoutX="56.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
@@ -22,5 +21,6 @@
             <Font size="31.0" />
          </font>
       </Text>
+      <ListView fx:id="cartList" layoutX="164.0" layoutY="21.0" prefHeight="227.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

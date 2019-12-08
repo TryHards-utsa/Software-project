@@ -1,12 +1,17 @@
 package application.controller;
 
 import application.Main;
+import application.model.Item;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 
 public class Checkout {
+	
+	@FXML private ListView<Item> cartList;
 	
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
@@ -30,5 +35,9 @@ public class Checkout {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void setCartList(ListView<Item> givenList) {
+		cartList.getItems().addAll( givenList.getItems() );
 	}
 }

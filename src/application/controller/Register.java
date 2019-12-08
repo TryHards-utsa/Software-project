@@ -18,7 +18,7 @@ public class Register implements EventHandler<ActionEvent> {
 	@FXML
 	PasswordField password;
 	@FXML
-	TextField userNameField;
+	TextField emailField;
 	@FXML
 	TextField addressField;
 	@FXML

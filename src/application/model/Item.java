@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Item {
 	String itemName;
-	String price;
+	double price;
 	
 	//edit comments
 
-	public Item(String itemName, String price){
+	public Item(String itemName, double price){
 		this.itemName=itemName;
 		this.price=price;
 	}
 
-	
+
 	public String toString(){ 
 		String ret ="-"+itemName+"------"+price;
 		return ret;
@@ -25,10 +25,10 @@ public class Item {
 		this.itemName=itemName;
 	}
 	
-	public String getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
-	public void setPrice(String price){
+	public void setPrice(double price){
 		this.price=price;
 	}	
 }

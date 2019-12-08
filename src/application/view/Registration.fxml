@@ -13,41 +13,41 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Register">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Register">
    <children>
       <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Pictures/software/VeggieWallpaper2.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="name" layoutX="226.0" layoutY="166.0" />
-      <TextField fx:id="userNameField" layoutX="226.0" layoutY="220.0" />
-      <TextField fx:id="cityFIeld" layoutX="226.0" layoutY="375.0" />
-      <TextField fx:id="addressField" layoutX="226.0" layoutY="324.0" />
-      <Label layoutX="226.0" layoutY="149.0" text="Full Name" textFill="WHITE" />
-      <Label layoutX="226.0" layoutY="203.0" text="Username" textFill="WHITE" />
-      <Label layoutX="230.0" layoutY="252.0" text="Password" textFill="WHITE" />
-      <Label layoutX="228.0" layoutY="307.0" prefHeight="17.0" prefWidth="78.0" text="Street Address" textFill="WHITE" />
-      <Text fill="WHITE" layoutX="50.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter all info below before continuing">
+      <TextField fx:id="name" layoutX="226.0" layoutY="140.0" />
+      <TextField fx:id="userNameField" layoutX="226.0" layoutY="200.0" />
+      <TextField fx:id="cityFIeld" layoutX="226.0" layoutY="358.0" />
+      <TextField fx:id="addressField" layoutX="226.0" layoutY="304.0" />
+      <Label layoutX="228.0" layoutY="123.0" text="Full Name" textFill="WHITE" />
+      <Label layoutX="225.0" layoutY="179.0" text="Username" textFill="WHITE" />
+      <Label layoutX="224.0" layoutY="235.0" text="Password" textFill="WHITE" />
+      <Label layoutX="226.0" layoutY="287.0" prefHeight="17.0" prefWidth="78.0" text="Street Address" textFill="WHITE" />
+      <Text fill="WHITE" layoutX="50.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter all info below before continuing">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <PasswordField fx:id="password" layoutX="228.0" layoutY="269.0" />
-      <TextField fx:id="stateField" layoutX="226.0" layoutY="424.0" prefHeight="25.0" prefWidth="149.0" />
-      <Button fx:id="signUpButton" layoutX="81.0" layoutY="475.0" mnemonicParsing="false" onAction="#signupHandle" prefHeight="101.0" prefWidth="199.0" style="-fx-border-radius: 15; -fx-background-color: lightgrey; -fx-border-color: white; -fx-background-radius: 15;" text="Register">
+      <PasswordField fx:id="password" layoutX="226.0" layoutY="252.0" />
+      <TextField fx:id="stateField" layoutX="226.0" layoutY="411.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button fx:id="signUpButton" layoutX="14.0" layoutY="316.0" mnemonicParsing="false" onAction="#signupHandle" prefHeight="46.0" prefWidth="199.0" style="-fx-border-radius: 15; -fx-background-color: lightgrey; -fx-border-color: white; -fx-background-radius: 15;" text="Register">
          <font>
             <Font size="32.0" />
          </font></Button>
-      <Label layoutX="228.0" layoutY="358.0" text="City" textFill="WHITE" />
-      <Label layoutX="225.0" layoutY="407.0" text="State" textFill="WHITE" />
-      <Button fx:id="homeButton" layoutX="326.0" layoutY="475.0" mnemonicParsing="false" onAction="#returnHandle" prefHeight="101.0" prefWidth="174.0" style="-fx-border-radius: 15; -fx-background-color: lightgrey; -fx-border-color: white; -fx-background-radius: 15;" text="Return">
+      <Label layoutX="228.0" layoutY="341.0" text="City" textFill="WHITE" />
+      <Label layoutX="225.0" layoutY="394.0" text="State" textFill="WHITE" />
+      <Button fx:id="homeButton" layoutX="401.0" layoutY="314.0" mnemonicParsing="false" onAction="#returnHandle" prefHeight="52.0" prefWidth="174.0" style="-fx-border-radius: 15; -fx-background-color: lightgrey; -fx-border-color: white; -fx-background-radius: 15;" text="Return">
          <font>
             <Font size="32.0" />
          </font></Button>
-      <Label layoutX="339.0" layoutY="454.0" prefHeight="21.0" prefWidth="149.0" text="Already a member?">
+      <Label layoutX="401.0" layoutY="287.0" prefHeight="27.0" prefWidth="174.0" text="Already a member?" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
    </children>
 </AnchorPane>

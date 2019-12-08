@@ -24,7 +24,7 @@ public class Payment {
 		} else {
 			try {
 				Parent root = FXMLLoader.load( getClass().getResource( "../view/DriverAssign.fxml" ) ); 
-				Scene scene = new Scene( root, 600, 600 );
+				Scene scene = new Scene( root, 600, 450 );
 				Main.stage.setScene(scene);
 				Main.stage.show();
 				
@@ -37,8 +37,8 @@ public class Payment {
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
 
-			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 600 );
+			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Cart.fxml" ) ); 
+			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			

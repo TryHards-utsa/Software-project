@@ -19,7 +19,7 @@ public class Payment {
 		//get cc info and save it to 
 		String cardNum = cardNumber.getText();
 		String securityNum = securityCode.getText();
-		if( cardNum.length() != 19 || securityNum.length() != 3 ) {
+		if( cardNum.length() != 19 || securityNum.length() != 3 || cardNum.trim().isEmpty() || securityNum.trim().isEmpty()) {
 			error.setText("Enter Card Number: xxxx-xxxx-xxxx-xxxx and Security Code: xxx");
 		} else {
 			try {

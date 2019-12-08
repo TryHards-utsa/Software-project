@@ -65,4 +65,7 @@ public class Dataset {
 	public void setCustomersList(ArrayList<Customer> customersList) {
 		this.customersList=customersList;
 	}
+	public ArrayList<Item> getItemsList() {
+		return this.itemsList;
+	}
 }

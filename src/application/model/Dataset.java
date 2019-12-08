@@ -15,6 +15,8 @@ public class Dataset {
 
 	public Dataset(String listName){
 		this.listName=listName;
+		this.itemsList = new ArrayList<Item>();
+		this.customersList = new ArrayList<Customer>();
 	}
 	public void addCustomer(Customer name){
 		customersList.add(name);
@@ -45,7 +47,7 @@ public class Dataset {
 				String line=scan.nextLine();
 				String[] token=line.split(",");
 				//System.out.println(token[0]);
-				itemsList.add(new Item(token[0], Double.parseDouble(token[1])));
+				itemsList.add( new Item(token[0], Double.parseDouble(token[1])) );
 			}
 			scan.close();
 		}catch(IOException e){

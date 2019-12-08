@@ -1,10 +1,12 @@
 package application.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
 import application.model.Dataset;
+import application.model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,9 +48,14 @@ public class StoreView implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Dataset stock = new Dataset( "Current stock" );
-		//stock.loadItems(file);
-		//groceryList.getItems().addAll( stock.getItemsList() );
-		
+		try {
+			stock.loadItems("csv/drivers.csv");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//for( Item key : stock.getItemsList() ) {
+			groceryList.getItems().addAll( stock );
+		//}
 	}
 	
 }

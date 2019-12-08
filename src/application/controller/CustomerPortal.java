@@ -1,6 +1,9 @@
 package application.controller;
 
+import java.io.IOException;
+
 import application.Main;
+import application.model.Dataset;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -59,8 +62,14 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
-		
+		try {
+			Dataset customerList = new Dataset("List");
+			customerList.loadCustomer("data/customers.csv");
+			customerList.loadItems("data/items.csv");
+		} catch (IOException e) {
+			System.out.println( "Error loading the file - please check its location." );
+			e.printStackTrace();
+		}
 	}
 	
 }

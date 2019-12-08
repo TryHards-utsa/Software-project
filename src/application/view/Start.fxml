@@ -39,7 +39,7 @@
                      </font>
                   </Text>
                   <PasswordField fx:id="startpassword" layoutX="131.0" layoutY="309.0" prefHeight="25.0" prefWidth="220.0" />
-                  <Text fx:id="error" fill="#0d0d0d" layoutX="48.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="515.0" />
+                  <Text fx:id="error" fill="WHITE" layoutX="52.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="515.0" />
                </children>
             </AnchorPane>
          </children>

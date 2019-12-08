@@ -53,7 +53,7 @@ public class StoreView implements Initializable {
 			stock.loadItems("csv/drivers.csv");
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
+		}
 		groceryList.getItems().addAll( stock.getItemsList() );
 	}
 

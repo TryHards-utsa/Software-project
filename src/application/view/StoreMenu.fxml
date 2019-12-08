@@ -19,8 +19,6 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <TextArea layoutX="37.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
-      <TextArea layoutX="360.0" layoutY="91.0" prefHeight="281.0" prefWidth="200.0" />
       <Text layoutX="60.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grocery Items">
          <font>
             <Font size="19.0" />
@@ -33,7 +31,9 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TextField layoutX="36.0" layoutY="403.0" prefHeight="25.0" prefWidth="200.0" promptText="Add item to cart" />
-      <Button layoutX="37.0" layoutY="428.0" mnemonicParsing="false" text="Add Item" />
+      <TextField layoutX="23.0" layoutY="398.0" prefHeight="25.0" prefWidth="200.0" promptText="Add item to cart" />
+      <Button layoutX="82.0" layoutY="428.0" mnemonicParsing="false" text="Add Item" />
+      <ListView fx:id="groceryList" layoutX="23.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
+      <ListView fx:id="cartList" layoutX="360.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

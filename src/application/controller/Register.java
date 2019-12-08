@@ -34,7 +34,7 @@ public class Register implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {		
 		try {
 			Parent root = FXMLLoader.load( getClass().getResource( "../view/Registration.fxml" ) ); 
-			Scene scene = new Scene( root, 600, 600 );
+			Scene scene = new Scene( root, 600, 450 );
 			Main.stage.setScene(scene);
 			Main.stage.show();
 			
@@ -51,9 +51,9 @@ public class Register implements EventHandler<ActionEvent> {
 	public void signupHandle(ActionEvent event) {
 		//TODO error checking, model classes etc
 		try {
-
+			
 			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Start.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 600 );
+			Scene scene1 = new Scene( root1, 597, 412 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			
@@ -73,7 +73,7 @@ public class Register implements EventHandler<ActionEvent> {
 		try {
 
 			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Start.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 600 );
+			Scene scene1 = new Scene( root1, 597, 412 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			

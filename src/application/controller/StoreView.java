@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import application.Main;
 import application.model.Dataset;
 import application.model.Item;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,18 +18,15 @@ import javafx.scene.control.ListView;
 
 public class StoreView implements Initializable {
 	
-	@FXML private ListView<Dataset> groceryList;
-	@FXML private ListView<Dataset> cartList;
+	@FXML private ListView<Item> groceryList;
+	@FXML private ListView<Item> cartList;
 	
 	public void carthandle(ActionEvent event) {
 		try {
-
 			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Cart.fxml" ) ); 
 			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
-			
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -36,15 +34,14 @@ public class StoreView implements Initializable {
 	
 	public void addtocarthandle(ActionEvent event) {
 		try {
-			//onClick event so when grocery item is clicked, its added to cartlist
-			
-			
+			Item selectedItem = groceryList.getSelectionModel().getSelectedItem();
+			groceryList.getItems().remove(selectedItem);
+			cartList.getItems().add(selectedItem);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	//need item data to test
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Dataset stock = new Dataset( "Current stock" );
@@ -52,10 +49,25 @@ public class StoreView implements Initializable {
 			stock.loadItems("csv/drivers.csv");
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		//for( Item key : stock.getItemsList() ) {
-			groceryList.getItems().addAll( stock );
-		//}
+		}	
+		groceryList.getItems().addAll( stock.getItemsList() );
+	}
+
+	
+	public ListView<Item> getGroceryList() {
+		return groceryList;
+	}
+
+	public void setGroceryList(ListView<Item> groceryList) {
+		this.groceryList = groceryList;
+	}
+
+	public ListView<Item> getCartList() {
+		return cartList;
+	}
+
+	public void setCartList(ListView<Item> cartList) {
+		this.cartList = cartList;
 	}
 	
 }

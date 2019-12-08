@@ -31,8 +31,7 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TextField layoutX="23.0" layoutY="398.0" prefHeight="25.0" prefWidth="200.0" promptText="Add item to cart" />
-      <Button layoutX="82.0" layoutY="428.0" mnemonicParsing="false" text="Add Item" />
+      <Button layoutX="77.0" layoutY="398.0" mnemonicParsing="false" onAction="#addtocarthandle" text="Add Item" />
       <ListView fx:id="groceryList" layoutX="23.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
       <ListView fx:id="cartList" layoutX="360.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
    </children>

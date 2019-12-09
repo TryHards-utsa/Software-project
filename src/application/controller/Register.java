@@ -1,18 +1,27 @@
 package application.controller;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 import application.Main;
+import application.model.Customer;
+import application.model.Dataset;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 
-public class Register implements EventHandler<ActionEvent> {
+public class Register implements Initializable, EventHandler<ActionEvent> {
 	@FXML
 	TextField name;
 	@FXML
@@ -29,6 +38,11 @@ public class Register implements EventHandler<ActionEvent> {
 	Button homeButton;
 	@FXML
 	Button signUpButton;
+	
+	@FXML
+	Text error;	
+	Dataset customerData;
+	private ArrayList<Customer> customerList;
 
 	@Override
 	public void handle(ActionEvent arg0) {		
@@ -49,19 +63,25 @@ public class Register implements EventHandler<ActionEvent> {
 	 * @param event Signal for button clicked
 	 */
 	public void signupHandle(ActionEvent event) {
-		//TODO error checking, model classes etc
-		try {
-			
-			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Start.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 597, 412 );
-			Main.stage.setScene(scene1);
-			Main.stage.show();
-			
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
+		//TODO add new customer to database; needs model class
+				if(isEmpty()) {
+					error.setText("All fields must be filled, please try again");
+				}else if(!existCustomer(emailField.getText())){
+					try {
+						Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Start.fxml" ) ); 
+						Scene scene1 = new Scene( root1, 597, 412 );
+						Main.stage.setScene(scene1);
+						Main.stage.show();
+					
+					}catch (IOException e) {
+						e.printStackTrace();
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+				}else {
+					error.setText("Oops! Email in use");
+				}
+
 	}
 	
 	/**
@@ -82,6 +102,45 @@ public class Register implements EventHandler<ActionEvent> {
 			e.printStackTrace();
 		}
 		
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		Dataset stock = new Dataset( "Current Customers" );
+		try {
+			stock.loadCustomer("data/customers.csv");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		customerList = stock.getCustomerList();
+		
+	}
+	
+	/**
+	 * Checks customer database for existing customer credentials
+	 * @param emailText
+	 * @return returns true if customer exist false otherwise
+	 */
+	public boolean existCustomer(String emailText) {
+		for(Customer customer : customerList) {
+			if(customer.getEmail().equals(emailText)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * @return true if any fields are empty false otherwise
+	 */
+	public boolean isEmpty() {
+		return (emailField.getText().trim().isEmpty() ||
+				addressField.getText().trim().isEmpty() ||
+				cityFIeld.getText().trim().isEmpty() ||
+				stateField.getText().trim().isEmpty() ||
+				name.getText().trim().isEmpty()||
+			    password.getText().trim().isEmpty()); 
 	}
 }
 

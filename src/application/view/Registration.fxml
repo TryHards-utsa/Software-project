@@ -34,6 +34,7 @@
          </font>
       </Text>
       <PasswordField fx:id="password" layoutX="226.0" layoutY="252.0" />
+      <Text fx:id="error" fill="RED" layoutX="55.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="515.0" />
       <TextField fx:id="stateField" layoutX="226.0" layoutY="411.0" prefHeight="25.0" prefWidth="149.0" />
       <Button fx:id="signUpButton" layoutX="14.0" layoutY="316.0" mnemonicParsing="false" onAction="#signupHandle" prefHeight="46.0" prefWidth="199.0" style="-fx-border-radius: 15; -fx-background-color: lightgrey; -fx-border-color: white; -fx-background-radius: 15;" text="Register">
          <font>

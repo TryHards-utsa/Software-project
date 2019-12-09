@@ -100,4 +100,7 @@ public class Dataset {
 	public ArrayList<Item> getItemsList() {
 		return this.itemsList;
 	}
+	public ArrayList<Driver> getDriversList() {
+		return this.driversList;
+	}
 }

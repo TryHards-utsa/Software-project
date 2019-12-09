@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import application.model.Dataset;
+import application.model.Driver;
 import application.model.Item;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -18,7 +19,7 @@ import javafx.scene.control.ListView;
 
 public class DriverAssign implements Initializable {
 
-	@FXML private ListView<Item> driverList;
+	@FXML private ListView<Driver> driverList;
 
 	public void storeviewhandle(ActionEvent event) {
 		
@@ -50,12 +51,12 @@ public class DriverAssign implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Dataset stock = new Dataset( "Current stock" );
-//		try {
-//			stock.loadDrivers("csv/items.csv");
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		driverList.getItems().addAll( stock.getDriverList() );
+		try {
+			stock.loadDrivers("csv/drivers.csv");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		driverList.getItems().addAll( stock.getDriversList() );
 	}
 	
 }

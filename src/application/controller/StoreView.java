@@ -50,7 +50,7 @@ public class StoreView implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Dataset stock = new Dataset( "Current stock" );
 		try {
-			stock.loadItems("csv/drivers.csv");
+			stock.loadItems("csv/items.csv");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

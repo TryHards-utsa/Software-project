@@ -9,11 +9,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Text;
 
 public class Checkout {
 	
 	@FXML private ListView<Item> cartList;
 	private Customer currentCustomer;
+	
+	@FXML
+	Text totalamt;
 	
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
@@ -41,6 +45,10 @@ public class Checkout {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void addtotal(ListView<Item> givenList ) {
+		
 	}
 
 	public void setCartList(ListView<Item> givenList) {

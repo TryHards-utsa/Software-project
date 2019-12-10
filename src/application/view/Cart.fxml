@@ -22,5 +22,15 @@
          </font>
       </Text>
       <ListView fx:id="cartList" layoutX="164.0" layoutY="21.0" prefHeight="227.0" prefWidth="200.0" />
+      <Text layoutX="377.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Running total:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="totalamt" layoutX="483.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="56.248046875">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

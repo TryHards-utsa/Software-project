@@ -15,6 +15,7 @@ public class Payment {
     @FXML private TextField securityCode;
     @FXML private Text error;
     @FXML private RadioButton quickDeliveryButton;
+    @FXML private TextField deliveryDate;
     
 
 	
@@ -30,13 +31,18 @@ public class Payment {
 				Parent root1 = loader.load();
 				DriverAssign tmp = (DriverAssign) loader.getController();
 				
-				if( quickDeliveryButton.isSelected() ) {
+				if( !quickDeliveryButton.isSelected() && deliveryDate.getText().trim().isEmpty() ) { 
+					error.setText("Select one: quick delivery option or enter a date");
+				} else if( quickDeliveryButton.isSelected() && !deliveryDate.getText().trim().isEmpty() ) {
+					error.setText("Select only one: quick delivery option or enter a date");
+				} else if(quickDeliveryButton.isSelected() && deliveryDate.getText().trim().isEmpty()) {
 					tmp.setProgress(0.20);
+					Scene scene = new Scene( root1, 600, 450 );
+					Main.stage.setScene(scene);
+					Main.stage.show();
 				}
 				
-				Scene scene = new Scene( root1, 600, 450 );
-				Main.stage.setScene(scene);
-				Main.stage.show();
+				
 				
 			} catch(Exception e) {
 				e.printStackTrace();

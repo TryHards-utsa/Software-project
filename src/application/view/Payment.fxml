@@ -34,5 +34,8 @@
          </font></Label>
       <Text fx:id="error" layoutX="88.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Button layoutX="14.0" layoutY="544.0" mnemonicParsing="false" onAction="#StoreViewFromCarthandle" text="Go back to cart" />
+      <TextField fx:id="deliveryDate" layoutX="207.0" layoutY="470.0" />
+      <RadioButton fx:id="quickDeliveryButton" layoutX="208.0" layoutY="437.0" mnemonicParsing="false" text="Quick delivery?" />
+      <Label layoutX="59.0" layoutY="475.0" text="Or enter delivery date:" />
    </children>
 </AnchorPane>

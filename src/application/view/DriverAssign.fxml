@@ -26,11 +26,11 @@
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Text>
-      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="14.0" layoutY="356.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Processed groceries, one of our available drivers are on there way">
+      <Text fx:id="assignedDriver" fill="WHITE" fontSmoothingType="LCD" layoutX="14.0" layoutY="356.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <ProgressBar layoutX="50.0" layoutY="362.0" prefHeight="18.0" prefWidth="517.0" progress="0.05" />
+      <ProgressBar fx:id="deliveryProgress" layoutX="50.0" layoutY="362.0" prefHeight="18.0" prefWidth="517.0" progress="0.05" />
       <ListView fx:id="driverList" layoutX="23.0" layoutY="91.0" prefHeight="218.0" prefWidth="229.0" />
    </children>
 </AnchorPane>

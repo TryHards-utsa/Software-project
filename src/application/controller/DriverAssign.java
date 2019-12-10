@@ -16,10 +16,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.text.Text;
 
 public class DriverAssign implements Initializable {
 
 	@FXML private ListView<Driver> driverList;
+	@FXML private Text assignedDriver;
+	@FXML private ProgressBar deliveryProgress;
 
 	public void storeviewhandle(ActionEvent event) {
 		
@@ -57,6 +61,17 @@ public class DriverAssign implements Initializable {
 			e.printStackTrace();
 		}
 		driverList.getItems().addAll( stock.getDriversList() );
+		Driver yourDriver = null;
+		for( Driver tmp : stock.getDriversList() ) {
+			if( tmp.getStatus().contentEquals("available") ) {
+				yourDriver = tmp;
+			}
+		}
+		assignedDriver.setText("Groceries processed, " + yourDriver.getDriverName() + " is on the way!");;
+	}
+	
+	public void setProgress( Double value ) {
+		deliveryProgress.setProgress(value);
 	}
 	
 }

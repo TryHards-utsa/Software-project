@@ -59,13 +59,11 @@ public class StoreView implements Initializable {
 		
 		for(Item item : groceryList.getItems() ) {
 			if(item.getItemName().equalsIgnoreCase(searchResult)) {
-				searchedItems.getItems().add(item);
+				//searchedItems.getItems().add(item);
+				groceryList.getItems().remove(item);
+				cartList.getItems().add(item);
+				currentCustomer.getCart().add(item);
 			}
-		}
-		if(searchedItems != null) {
-			groceryList.getItems().clear(); 
-			
-			groceryList.getItems().addAll(searchedItems.getItems());
 		}
 	}
 

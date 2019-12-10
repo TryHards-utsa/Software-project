@@ -7,32 +7,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.StoreView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="600.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.StoreView">
    <children>
       <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../backgrounds/CartWallpaper.jpg" />
+            <Image url="@../../../backgrounds/cartWallpaper.jpg" />
          </image>
       </ImageView>
-      <Text fill="#ff4c4c" layoutX="123.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the store!">
+      <Text fill="#ff4c4c" layoutX="143.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the store!">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Text layoutX="60.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grocery Items">
+      <Text fill="RED" layoutX="32.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grocery Items">
          <font>
             <Font size="19.0" />
          </font></Text>
-      <Text layoutX="443.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
+      <Text fill="RED" layoutX="450.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
          <font>
             <Font size="19.0" />
          </font></Text>
-      <Button layoutX="402.0" layoutY="413.0" mnemonicParsing="false" onAction="#carthandle" prefHeight="25.0" prefWidth="116.0" text="Go to checkout">
+      <Button layoutX="242.0" layoutY="310.0" mnemonicParsing="false" onAction="#carthandle" prefHeight="25.0" prefWidth="116.0" text="Go to checkout">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="77.0" layoutY="398.0" mnemonicParsing="false" onAction="#addtocarthandle" text="Add Item" />
-      <ListView fx:id="groceryList" layoutX="23.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
-      <ListView fx:id="cartList" layoutX="360.0" layoutY="104.0" prefHeight="281.0" prefWidth="200.0" />
+      <Button layoutX="234.0" layoutY="145.0" mnemonicParsing="false" onAction="#addtocarthandle" text="Add Item" />
+      <ListView fx:id="groceryList" layoutX="23.0" layoutY="65.0" prefHeight="281.0" prefWidth="200.0" />
+      <ListView fx:id="cartList" layoutX="367.0" layoutY="65.0" prefHeight="281.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

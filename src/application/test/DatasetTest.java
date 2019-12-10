@@ -51,6 +51,13 @@ public class DatasetTest {
 		dataObj.loadItems("csv/items.csv");
 		assertFalse("Item List is empty: ",dataObj.getItemsList().isEmpty());
 	}
+	
+	@Before
+	public void testLoadDrivers() throws IOException {
+		dataObj = new Dataset("drivers");
+		dataObj.loadDrivers("csv/drivers.csv");
+		assertFalse("Driver List is empty: ",dataObj.getDriversList().isEmpty());
+	}
 
 	@Test
 	public void testGetCustomerList() {

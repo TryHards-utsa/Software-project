@@ -33,7 +33,7 @@ public class StoreView implements Initializable {
 			Checkout tmp = (Checkout) loader.getController();
 			tmp.setCartList(cartList);
 			tmp.setCurrentCustomer(currentCustomer);
-			
+			addtotal();
 			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
@@ -78,7 +78,15 @@ public class StoreView implements Initializable {
 		}
 		groceryList.getItems().addAll( stock.getItemsList() );
 	}
-
+	
+	public void addtotal() {
+		double total=0;
+		for(int i=0;i<currentCustomer.getCart().size();i++) {
+			System.out.println(currentCustomer.getCart().get(i));
+			total += currentCustomer.getCart().get(i).getPrice();
+		}
+		Checkout.totalValue=total;
+	}
 	
 	public ListView<Item> getGroceryList() {
 		return groceryList;

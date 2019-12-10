@@ -14,10 +14,13 @@ import javafx.scene.text.Text;
 public class Checkout {
 	
 	@FXML private ListView<Item> cartList;
-	private Customer currentCustomer;
+	public static Customer currentCustomer;
+	
+	public static double totalValue;
 	
 	@FXML
-	Text totalamt;
+	public static Text totalamt;
+	
 	
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
@@ -25,7 +28,6 @@ public class Checkout {
 			Scene scene = new Scene( root, 600, 355 );
 			Main.stage.setScene(scene);
 			Main.stage.show();
-			
 		} catch(Exception e)  {
 			e.printStackTrace();
 		}
@@ -38,17 +40,12 @@ public class Checkout {
 			Scene scene = new Scene( root, 600, 600 );
 			Payment tmp = (Payment) loader.getController();
 			tmp.setCurrentCustomer(currentCustomer);
-			
 			Main.stage.setScene(scene);
 			Main.stage.show();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public void addtotal(ListView<Item> givenList ) {
-		
 	}
 
 	public void setCartList(ListView<Item> givenList) {

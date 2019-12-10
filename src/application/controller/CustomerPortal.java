@@ -45,29 +45,29 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 	public void signInhandle(ActionEvent event) {
 		try {
 
-			if(startemail.getText().trim().isEmpty() && startpassword.getText().trim().isEmpty()) {
+			Dataset customerList = new Dataset("List");
+			customerList.loadItems("csv/items.csv");
+			customerList.loadCustomer("data/customers.csv");
+			
+			/*if(startemail.getText().trim().isEmpty() && startpassword.getText().trim().isEmpty()) {
 				error.setText("Either Email or password was not inputed correctly, please try again");
-				
-				
-			}else {
-				ArrayList<Item> fresh =new ArrayList<Item>();
-				currentCustomer = new Customer("name","addy",startemail.getText(),startpassword.getText(), fresh);
-				
-				FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/StoreMenu.fxml" ) );
-				Parent root1 = loader.load();
-				StoreView tmp = (StoreView) loader.getController();
-				tmp.setCurrentCustomer(currentCustomer);
-				
-				Scene scene1 = new Scene( root1, 600, 355 );
-				Main.stage.setScene(scene1);
-				Main.stage.show();
+			*/
+			for(int i=0;i<customerList.getCustomerList().size();i++) {
+				if(startemail.getText().equals(customerList.getCustomerList().get(i).getEmail()) 
+						&& startpassword.getText().equals(customerList.getCustomerList().get(i).getPassword())) {
+					Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
+					Scene scene1 = new Scene( root1, 600, 470 );
+					Main.stage.setScene(scene1);
+					Main.stage.show();
+				}else {
+					error.setText("Either Email or password was not inputed correctly, please try again");
+				}
 			}
 			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	@Override

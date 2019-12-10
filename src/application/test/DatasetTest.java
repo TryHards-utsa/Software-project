@@ -2,12 +2,21 @@ package application.test;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
+import application.model.Customer;
+import application.model.Dataset;
+import application.model.Item;
+
 public class DatasetTest {
+	private Dataset dataObj;
+	ArrayList<Item> cart;
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
@@ -15,6 +24,7 @@ public class DatasetTest {
 
 	@Before
 	public void setUp() throws Exception {
+		dataObj = new Dataset("Stock");//for Test methods
 	}
 
 	@After
@@ -23,28 +33,49 @@ public class DatasetTest {
 
 	@Test
 	public void testAddCustomer() {
-		//TODO implement
-		fail("Not yet implemented");
+		Customer customer = new Customer("customerName", "address", "password", "email", cart);
+		dataObj.addCustomer(customer);
+		assertTrue("Customer not added" ,dataObj.getCustomerList().contains(customer));
 	}
 
-	@Test
-	public void testLoadCustomer() {
-		fail("Not yet implemented");
+	@Before
+	public void testLoadCustomer() throws IOException {
+		dataObj = new Dataset("Customers");
+		dataObj.loadCustomer("data/customers.csv");
+		assertFalse("Customer List is empty: ",dataObj.getCustomerList().isEmpty());
 	}
 
-	@Test
-	public void testLoadItems() {
-		fail("Not yet implemented");
+	@Before
+	public void testLoadItems() throws IOException {
+		dataObj = new Dataset("Grocery");
+		dataObj.loadItems("csv/items.csv");
+		assertFalse("Item List is empty: ",dataObj.getItemsList().isEmpty());
 	}
 
 	@Test
 	public void testGetCustomerList() {
-		fail("Not yet implemented");
+		ArrayList<Customer> custmList = null;
+		custmList = dataObj.getCustomerList();
+		assertFalse("Customers List was not fetched",custmList == null);
 	}
 
 	@Test
 	public void testGetItemsList() {
-		fail("Not yet implemented");
+		ArrayList<Customer> custmList = null;
+		custmList = dataObj.getCustomerList();
+		assertFalse("Customers List was not fetched",custmList == null);
+		ArrayList<Item> itmList = null;
+		itmList = dataObj.getItemsList();
+		assertFalse("Item List was not fetched",itmList == null);
 	}
+	
+	@Test
+	public void testAddItems() {
+		Item itm = new Item("Apple", 22.50);
+		dataObj.getItemsList().add(itm);
+		assertTrue("Item not added" ,dataObj.getItemsList().contains(itm));
+		
+	}
+	
 
 }

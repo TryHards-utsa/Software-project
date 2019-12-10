@@ -22,7 +22,7 @@ public class Checkout {
 			Main.stage.setScene(scene);
 			Main.stage.show();
 			
-		} catch(Exception e) {
+		} catch(Exception e)  {
 			e.printStackTrace();
 		}
 	}

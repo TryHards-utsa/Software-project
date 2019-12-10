@@ -63,7 +63,7 @@ public class Payment {
 			tmpList.getItems().addAll(currentCustomer.getCart());
 			tmp.setCartList(tmpList);
 			
-			Scene scene1 = new Scene( root1, 600, 350 );
+			Scene scene1 = new Scene( root1, 350, 600 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			

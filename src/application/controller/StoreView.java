@@ -31,7 +31,7 @@ public class StoreView implements Initializable {
 			tmp.setCartList(cartList);
 			tmp.setCurrentCustomer(currentCustomer);
 			
-			Scene scene1 = new Scene( root1, 600, 600 );
+			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 		} catch(Exception e) {

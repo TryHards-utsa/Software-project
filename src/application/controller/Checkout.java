@@ -18,7 +18,7 @@ public class Checkout {
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
 			Parent root = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
-			Scene scene = new Scene( root, 600, 470 );
+			Scene scene = new Scene( root, 600, 355 );
 			Main.stage.setScene(scene);
 			Main.stage.show();
 			

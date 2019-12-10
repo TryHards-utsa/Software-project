@@ -63,7 +63,8 @@ public class StoreView implements Initializable {
 			}
 		}
 		if(searchedItems != null) {
-			groceryList.getItems().clear();
+			groceryList.getItems().clear(); 
+			
 			groceryList.getItems().addAll(searchedItems.getItems());
 		}
 	}

@@ -30,7 +30,7 @@ public class DriverAssign implements Initializable {
 		try {
 			
 			Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
-			Scene scene1 = new Scene( root1, 600, 470 );
+			Scene scene1 = new Scene( root1, 600, 355 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			

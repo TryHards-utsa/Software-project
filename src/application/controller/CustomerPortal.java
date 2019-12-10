@@ -43,7 +43,7 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 
 			if(startemail.getText().trim().isEmpty() && startpassword.getText().trim().isEmpty()) {
 				error.setText("Either Email or password was not inputed correctly, please try again");
-			
+
 				
 			}else {
 			
@@ -64,8 +64,8 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event) {
 		try {
 			Dataset customerList = new Dataset("List");
-			customerList.loadCustomer("data/customers.csv");
 			customerList.loadItems("data/items.csv");
+			customerList.loadCustomer("data/customers.csv");
 		} catch (IOException e) {
 			System.out.println( "Error loading the file - please check its location." );
 			e.printStackTrace();

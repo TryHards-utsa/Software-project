@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.Main;
+import application.model.Customer;
 import application.model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.control.ListView;
 public class Checkout {
 	
 	@FXML private ListView<Item> cartList;
+	private Customer currentCustomer;
 	
 	public void StoreViewFromCarthandle(ActionEvent event) {
 		try {
@@ -27,8 +29,12 @@ public class Checkout {
 	
 	public void paymenthandle(ActionEvent event) {
 		try {
-			Parent root = FXMLLoader.load( getClass().getResource( "../view/Payment.fxml" ) ); 
+			FXMLLoader loader = new FXMLLoader(getClass().getResource( "../view/Payment.fxml" ));
+			Parent root = loader.load();
 			Scene scene = new Scene( root, 600, 600 );
+			Payment tmp = (Payment) loader.getController();
+			tmp.setCurrentCustomer(currentCustomer);
+			
 			Main.stage.setScene(scene);
 			Main.stage.show();
 			
@@ -39,5 +45,8 @@ public class Checkout {
 
 	public void setCartList(ListView<Item> givenList) {
 		cartList.getItems().addAll( givenList.getItems() );
+	}
+	public void setCurrentCustomer(Customer tmp) {
+		currentCustomer = tmp;
 	}
 }

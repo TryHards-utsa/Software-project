@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.Customer;
 import application.model.Dataset;
 import application.model.Item;
 import javafx.collections.ObservableList;
@@ -20,6 +21,7 @@ public class StoreView implements Initializable {
 	
 	@FXML private ListView<Item> groceryList;
 	@FXML private ListView<Item> cartList;
+	private Customer currentCustomer;
 	
 	public void carthandle(ActionEvent event) {
 		try {
@@ -27,6 +29,7 @@ public class StoreView implements Initializable {
 			Parent root1 = loader.load();
 			Checkout tmp = (Checkout) loader.getController();
 			tmp.setCartList(cartList);
+			tmp.setCurrentCustomer(currentCustomer);
 			
 			Scene scene1 = new Scene( root1, 600, 600 );
 			Main.stage.setScene(scene1);
@@ -41,6 +44,7 @@ public class StoreView implements Initializable {
 			Item selectedItem = groceryList.getSelectionModel().getSelectedItem();
 			groceryList.getItems().remove(selectedItem);
 			cartList.getItems().add(selectedItem);
+			currentCustomer.getCart().add(selectedItem);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -72,6 +76,9 @@ public class StoreView implements Initializable {
 
 	public void setCartList(ListView<Item> cartList) {
 		this.cartList = cartList;
+	}
+	public void setCurrentCustomer(Customer tmp) {
+		currentCustomer = tmp;
 	}
 	
 }

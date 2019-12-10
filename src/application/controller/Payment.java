@@ -1,11 +1,14 @@
 package application.controller;
 
 import application.Main;
+import application.model.Customer;
+import application.model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -16,7 +19,7 @@ public class Payment {
     @FXML private Text error;
     @FXML private RadioButton quickDeliveryButton;
     @FXML private TextField deliveryDate;
-    
+    private Customer currentCustomer;
 
 	
 	public void driverassignhandle(ActionEvent event) {
@@ -54,8 +57,11 @@ public class Payment {
 		try {
 			FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/Cart.fxml") );
 			Parent root1 = loader.load();
-//			Checkout tmp = (Checkout) loader.getController();
-//			tmp.setCartList(cartList);
+			Checkout tmp = (Checkout) loader.getController();
+			tmp.setCurrentCustomer(currentCustomer);
+			ListView<Item> tmpList = new ListView<Item>();
+			tmpList.getItems().addAll(currentCustomer.getCart());
+			tmp.setCartList(tmpList);
 			
 			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
@@ -66,6 +72,9 @@ public class Payment {
 			e.printStackTrace();
 		}
 		
+	}
+	public void setCurrentCustomer(Customer tmp) {
+		currentCustomer = tmp;
 	}
 	
 }

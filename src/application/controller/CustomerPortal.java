@@ -1,9 +1,12 @@
 package application.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import application.Main;
+import application.model.Customer;
 import application.model.Dataset;
+import application.model.Item;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,6 +26,7 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 	PasswordField startpassword; 
 	@FXML
 	Text error;
+	private Customer currentCustomer;
 	
 
 	public void registrationhandle(ActionEvent event) {
@@ -43,11 +47,17 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 
 			if(startemail.getText().trim().isEmpty() && startpassword.getText().trim().isEmpty()) {
 				error.setText("Either Email or password was not inputed correctly, please try again");
-
+				
 				
 			}else {
-			
-				Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
+				ArrayList<Item> fresh =new ArrayList<Item>();
+				currentCustomer = new Customer("name","addy",startemail.getText(),startpassword.getText(), fresh);
+				
+				FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/StoreMenu.fxml" ) );
+				Parent root1 = loader.load();
+				StoreView tmp = (StoreView) loader.getController();
+				tmp.setCurrentCustomer(currentCustomer);
+				
 				Scene scene1 = new Scene( root1, 600, 470 );
 				Main.stage.setScene(scene1);
 				Main.stage.show();

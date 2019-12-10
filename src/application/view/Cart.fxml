@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/software/cartWallpaper.jpg" />
+            <Image url="@../../../backgrounds/CartWallpaper.jpg" />
          </image>
       </ImageView>
       <Button layoutX="27.0" layoutY="259.0" mnemonicParsing="false" onAction="#StoreViewFromCarthandle" text="Back to store" />

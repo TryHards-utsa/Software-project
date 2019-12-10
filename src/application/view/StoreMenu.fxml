@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/software/blurredStoreWallpaper.jpg" />
+            <Image url="@../../../backgrounds/CartWallpaper.jpg" />
          </image>
       </ImageView>
       <Text fill="#ff4c4c" layoutX="123.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the store!">

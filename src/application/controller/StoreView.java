@@ -16,11 +16,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 public class StoreView implements Initializable {
 	
 	@FXML private ListView<Item> groceryList;
 	@FXML private ListView<Item> cartList;
+	@FXML private TextField searchField;
 	public static Customer currentCustomer;
 	//private Customer currentCustomer;
 	
@@ -48,6 +50,21 @@ public class StoreView implements Initializable {
 			currentCustomer.getCart().add(selectedItem);
 		} catch(Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void searchHandle(ActionEvent event) {
+		String searchResult = searchField.getText();
+		ListView<Item> searchedItems = new ListView<Item>();
+		
+		for(Item item : groceryList.getItems() ) {
+			if(item.getItemName().equalsIgnoreCase(searchResult)) {
+				searchedItems.getItems().add(item);
+			}
+		}
+		if(searchedItems != null) {
+			groceryList.getItems().clear();
+			groceryList.getItems().addAll(searchedItems.getItems());
 		}
 	}
 

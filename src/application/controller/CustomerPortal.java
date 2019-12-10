@@ -50,7 +50,6 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 				
 				
 			}else {
-<<<<<<< HEAD
 				ArrayList<Item> fresh =new ArrayList<Item>();
 				currentCustomer = new Customer("name","addy",startemail.getText(),startpassword.getText(), fresh);
 				
@@ -59,12 +58,7 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 				StoreView tmp = (StoreView) loader.getController();
 				tmp.setCurrentCustomer(currentCustomer);
 				
-				Scene scene1 = new Scene( root1, 600, 470 );
-=======
-			
-				Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
 				Scene scene1 = new Scene( root1, 600, 355 );
->>>>>>> branch 'master' of https://github.com/TryHards-utsa/Software-project.git
 				Main.stage.setScene(scene1);
 				Main.stage.show();
 			}

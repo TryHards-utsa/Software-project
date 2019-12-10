@@ -55,6 +55,7 @@ public class CustomerPortal implements EventHandler<ActionEvent> {
 			for(int i=0;i<customerList.getCustomerList().size();i++) {
 				if(startemail.getText().equals(customerList.getCustomerList().get(i).getEmail()) 
 						&& startpassword.getText().equals(customerList.getCustomerList().get(i).getPassword())) {
+					StoreView.currentCustomer=customerList.getCustomerList().get(i);
 					Parent root1 = FXMLLoader.load( getClass().getResource( "../view/StoreMenu.fxml" ) ); 
 					Scene scene1 = new Scene( root1, 600, 355 );
 					Main.stage.setScene(scene1);

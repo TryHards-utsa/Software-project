@@ -21,7 +21,8 @@ public class StoreView implements Initializable {
 	
 	@FXML private ListView<Item> groceryList;
 	@FXML private ListView<Item> cartList;
-	private Customer currentCustomer;
+	public static Customer currentCustomer;
+	//private Customer currentCustomer;
 	
 	public void carthandle(ActionEvent event) {
 		try {

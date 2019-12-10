@@ -56,6 +56,7 @@ public class StoreView implements Initializable {
 		Dataset stock = new Dataset( "Current stock" );
 		try {
 			stock.loadItems("csv/items.csv");
+			System.out.println(currentCustomer.getCutsomerName());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

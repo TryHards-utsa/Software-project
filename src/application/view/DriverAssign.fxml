@@ -14,15 +14,15 @@
             <Image url="@../../../backgrounds/VeggieWallpaper3.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="376.0" layoutY="132.0" mnemonicParsing="false" onAction="#storeviewhandle" prefHeight="33.0" prefWidth="138.0" text="Back to Store">
+      <Button layoutX="32.0" layoutY="371.0" mnemonicParsing="false" onAction="#storeviewhandle" prefHeight="33.0" prefWidth="138.0" text="Back to Store">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="376.0" layoutY="219.0" mnemonicParsing="false" onAction="#exithandle" prefHeight="39.0" prefWidth="138.0" text="Exit Application">
+      <Button layoutX="196.0" layoutY="371.0" mnemonicParsing="false" onAction="#exithandle" prefHeight="39.0" prefWidth="138.0" text="Exit Application">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Text fill="WHITE" layoutX="50.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of available drivers">
+      <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of available drivers">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Text>
@@ -30,7 +30,13 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <ProgressBar fx:id="deliveryProgress" layoutX="50.0" layoutY="362.0" prefHeight="18.0" prefWidth="517.0" progress="0.05" />
+      <ProgressBar fx:id="deliveryProgress" layoutX="23.0" layoutY="328.0" prefHeight="18.0" prefWidth="517.0" progress="0.05" />
       <ListView fx:id="driverList" layoutX="23.0" layoutY="91.0" prefHeight="218.0" prefWidth="229.0" />
+      <Text fill="WHITE" layoutX="361.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receipt">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="receipt" editable="false" layoutX="339.0" layoutY="90.0" prefHeight="218.0" prefWidth="220.0" />
    </children>
 </AnchorPane>

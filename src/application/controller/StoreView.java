@@ -24,16 +24,18 @@ public class StoreView implements Initializable {
 	@FXML private ListView<Item> cartList;
 	@FXML private TextField searchField;
 	public static Customer currentCustomer;
+	public static double totalValue;
 	//private Customer currentCustomer;
 	
 	public void carthandle(ActionEvent event) {
 		try {
+			addtotal();
+			System.out.println("hello");
 			FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/Cart.fxml" ) );
 			Parent root1 = loader.load();
 			Checkout tmp = (Checkout) loader.getController();
 			tmp.setCartList(cartList);
 			tmp.setCurrentCustomer(currentCustomer);
-			addtotal();
 			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
@@ -45,14 +47,15 @@ public class StoreView implements Initializable {
 	public void addtocarthandle(ActionEvent event) {
 		try {
 			Item selectedItem = groceryList.getSelectionModel().getSelectedItem();
-			groceryList.getItems().remove(selectedItem);
-			cartList.getItems().add(selectedItem);
-			currentCustomer.getCart().add(selectedItem);
+			if(selectedItem!= null) {
+				groceryList.getItems().remove(selectedItem);
+				cartList.getItems().add(selectedItem);
+				currentCustomer.getCart().add(selectedItem);
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 	public void searchHandle(ActionEvent event) {
 		String searchResult = searchField.getText();
 		//ListView<Item> prevItems = groceryList;
@@ -87,10 +90,11 @@ public class StoreView implements Initializable {
 	public void addtotal() {
 		double total=0;
 		for(int i=0;i<currentCustomer.getCart().size();i++) {
-			System.out.println(currentCustomer.getCart().get(i));
+			//System.out.println(currentCustomer.getCart().get(i));
 			total += currentCustomer.getCart().get(i).getPrice();
 		}
-		Checkout.totalValue=total;
+		//System.out.println(total);
+		totalValue=total;
 	}
 	
 	public ListView<Item> getGroceryList() {

@@ -35,6 +35,6 @@
       <ListView fx:id="groceryList" layoutX="10.0" layoutY="65.0" prefHeight="212.0" prefWidth="200.0" />
       <ListView fx:id="cartList" layoutX="360.0" layoutY="65.0" prefHeight="281.0" prefWidth="200.0" />
       <TextField fx:id="searchField" layoutX="10.0" layoutY="298.0" prefHeight="31.0" prefWidth="116.0" />
-      <Button layoutX="143.0" layoutY="298.0" mnemonicParsing="false" onAction="#searchHandle" text="Button" />
+      <Button layoutX="143.0" layoutY="298.0" mnemonicParsing="false" onAction="#searchHandle" text="Search" />
    </children>
 </AnchorPane>

@@ -55,16 +55,21 @@ public class StoreView implements Initializable {
 	
 	public void searchHandle(ActionEvent event) {
 		String searchResult = searchField.getText();
-		ListView<Item> searchedItems = new ListView<Item>();
+		//ListView<Item> prevItems = groceryList;
+		Item tmp = null;
 		
 		for(Item item : groceryList.getItems() ) {
 			if(item.getItemName().equalsIgnoreCase(searchResult)) {
-				//searchedItems.getItems().add(item);
-				groceryList.getItems().remove(item);
-				cartList.getItems().add(item);
-				currentCustomer.getCart().add(item);
+				tmp = item;
 			}
 		}
+		if(tmp!= null) {
+			groceryList.getItems().remove(tmp);
+			cartList.getItems().add(tmp);
+			currentCustomer.getCart().add(tmp);
+			searchField.clear();
+		}
+		
 	}
 
 	@Override

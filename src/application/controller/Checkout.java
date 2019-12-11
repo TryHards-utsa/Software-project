@@ -1,25 +1,30 @@
 package application.controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import application.Main;
 import application.model.Customer;
 import application.model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class Checkout {
+public class Checkout implements Initializable{
 	
 	@FXML private ListView<Item> cartList;
 	public static Customer currentCustomer;
 	
-	public static double totalValue;
 	
 	@FXML
-	public static Text totalamt;
+	Label totalamt;
 	
 	
 	public void StoreViewFromCarthandle(ActionEvent event) {
@@ -53,5 +58,12 @@ public class Checkout {
 	}
 	public void setCurrentCustomer(Customer tmp) {
 		currentCustomer = tmp;
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		//Double.toString(total)
+		totalamt.setText("$"+StoreView.totalValue);
 	}
 }

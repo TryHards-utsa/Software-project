@@ -47,9 +47,11 @@ public class StoreView implements Initializable {
 	public void addtocarthandle(ActionEvent event) {
 		try {
 			Item selectedItem = groceryList.getSelectionModel().getSelectedItem();
-			groceryList.getItems().remove(selectedItem);
-			cartList.getItems().add(selectedItem);
-			currentCustomer.getCart().add(selectedItem);
+			if(selectedItem!= null) {
+				groceryList.getItems().remove(selectedItem);
+				cartList.getItems().add(selectedItem);
+				currentCustomer.getCart().add(selectedItem);
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

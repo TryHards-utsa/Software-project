@@ -25,12 +25,11 @@ public class StoreView implements Initializable {
 	@FXML private TextField searchField;
 	public static Customer currentCustomer;
 	public static double totalValue;
-	//private Customer currentCustomer;
 	
 	public void carthandle(ActionEvent event) {
 		try {
 			addtotal();
-			System.out.println("hello");
+			//System.out.println("hello");
 			FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/Cart.fxml" ) );
 			Parent root1 = loader.load();
 			Checkout tmp = (Checkout) loader.getController();
@@ -48,7 +47,6 @@ public class StoreView implements Initializable {
 		try {
 			Item selectedItem = groceryList.getSelectionModel().getSelectedItem();
 			if(selectedItem!= null) {
-				groceryList.getItems().remove(selectedItem);
 				cartList.getItems().add(selectedItem);
 				currentCustomer.getCart().add(selectedItem);
 			}
@@ -58,7 +56,6 @@ public class StoreView implements Initializable {
 	}
 	public void searchHandle(ActionEvent event) {
 		String searchResult = searchField.getText();
-		//ListView<Item> prevItems = groceryList;
 		Item tmp = null;
 		
 		for(Item item : groceryList.getItems() ) {
@@ -67,7 +64,6 @@ public class StoreView implements Initializable {
 			}
 		}
 		if(tmp!= null) {
-			groceryList.getItems().remove(tmp);
 			cartList.getItems().add(tmp);
 			currentCustomer.getCart().add(tmp);
 			searchField.clear(); 
@@ -80,7 +76,6 @@ public class StoreView implements Initializable {
 		Dataset stock = new Dataset( "Current stock" );
 		try {
 			stock.loadItems("csv/items.csv");
-			System.out.println(currentCustomer.getCutsomerName());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -91,10 +86,8 @@ public class StoreView implements Initializable {
 	public void addtotal() {
 		double total=0;
 		for(int i=0;i<currentCustomer.getCart().size();i++) {
-			//System.out.println(currentCustomer.getCart().get(i));
 			total += currentCustomer.getCart().get(i).getPrice();
 		}
-		//System.out.println(total);
 		totalValue=total;
 	}
 	

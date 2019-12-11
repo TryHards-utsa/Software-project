@@ -1,10 +1,12 @@
 package application.controller;
 
+import javafx.scene.control.TextArea;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.Customer;
 import application.model.Dataset;
 import application.model.Driver;
 import application.model.Item;
@@ -24,6 +26,7 @@ public class DriverAssign implements Initializable {
 	@FXML private ListView<Driver> driverList;
 	@FXML private Text assignedDriver;
 	@FXML private ProgressBar deliveryProgress;
+	@FXML private TextArea receipt;
 
 	public void storeviewhandle(ActionEvent event) {
 		
@@ -68,6 +71,12 @@ public class DriverAssign implements Initializable {
 			}
 		}
 		assignedDriver.setText("Groceries processed, " + yourDriver.getDriverName() + " is on the way!");;
+		String str = "";
+		for(Item itm : StoreView.currentCustomer.getCart() ) {
+			str += itm.toString() + "\n";
+		}
+		receipt.setText(str);
+		StoreView.currentCustomer.getCart().clear();
 	}
 	
 	public void setProgress( Double value ) {

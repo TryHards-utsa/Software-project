@@ -29,7 +29,6 @@ public class StoreView implements Initializable {
 	public void carthandle(ActionEvent event) {
 		try {
 			addtotal();
-			//System.out.println("hello");
 			FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/Cart.fxml" ) );
 			Parent root1 = loader.load();
 			Checkout tmp = (Checkout) loader.getController();
@@ -38,6 +37,18 @@ public class StoreView implements Initializable {
 			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void removeitem(ActionEvent event) {
+		try {
+			Item selectedItem = cartList.getSelectionModel().getSelectedItem();
+			if(selectedItem!= null) {
+				cartList.getItems().remove(selectedItem);
+				currentCustomer.getCart().remove(selectedItem);
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -46,5 +46,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
+      <Button layoutX="266.0" layoutY="202.0" mnemonicParsing="false" onAction="#removeitem" text="Remove Item" />
    </children>
 </AnchorPane>

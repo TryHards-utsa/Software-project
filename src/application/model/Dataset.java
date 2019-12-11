@@ -46,16 +46,18 @@ public class Dataset {
 	 */
 	public void loadCustomer( String file)throws IOException {
 		try {
+			ArrayList<Item> cart= new ArrayList<Item>();
 			Scanner scan = new Scanner(new File(file));
 			while(scan.hasNextLine()) {
 				String line=scan.nextLine();
 				String[] token=line.split(",");
-				String[] itemCart = token[4].split("\\+");
-				ArrayList<Item> cart= new ArrayList<Item>();
-				for(int i=0;i<itemsList.size();i++) {
-					for(int k=0; k<itemCart.length;k++) {
-						if(itemsList.get(i).itemName.equals(itemCart[k])) {
-							cart.add(itemsList.get(i));
+				if(!token[4].equals("0")) {
+					String[] itemCart = token[4].split("\\+");
+					for(int i=0;i<itemsList.size();i++) {
+						for(int k=0; k<itemCart.length;k++) {
+							if(itemsList.get(i).itemName.equals(itemCart[k])) {
+								cart.add(itemsList.get(i));
+							}
 						}
 					}
 				}

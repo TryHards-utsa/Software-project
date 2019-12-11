@@ -7,30 +7,43 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Map.Entry;
 
+/**
+ *Utility methods to read and write to database files for a customer and a driver
+ */
 public class Dataset {
 	String listName;
 	ArrayList<Customer> customersList;
 	ArrayList<Item> itemsList;
 	ArrayList<Driver> driversList;
-	//edit comments
 
+	/**
+	 * @param listName name of the list of data
+	 */
 	public Dataset(String listName){
 		this.listName=listName;
 		this.itemsList = new ArrayList<Item>();
 		this.customersList = new ArrayList<Customer>();
 		this.driversList = new ArrayList<Driver>();
 	}
+	
+	/**
+	 * Adds the specified customer to the list of customers
+	 * @param name Customer to be added 
+	 */
 	public void addCustomer(Customer name){
 		customersList.add(name);
 	}
-	/*public void addCustomer(String customerName, String address, String password,String email, ArrayList<Item> cart){
-		customersList.add(new Customer(customerName, address, password, email, cart));
-	}*/
+	
 	public String toString(){ 
 		String ret ="-"+listName;
 		return ret;
 	}
 	
+	/**
+	 * Reads in customers from the specified file and adds them a list of customers
+	 * @param file path of a file to be open and read from
+	 * @throws IOException Incompatible file
+	 */
 	public void loadCustomer( String file)throws IOException {
 		try {
 			Scanner scan = new Scanner(new File(file));
@@ -53,6 +66,12 @@ public class Dataset {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Reads in items from the specified file and adds them to a list of grocery items
+	 * @param file path of a file to be open and read from
+	 * @throws IOException Incompatible file
+	 */
 	public void loadItems( String file)throws IOException{
 		try {
 			Scanner scan = new Scanner(new File(file));
@@ -67,7 +86,13 @@ public class Dataset {
 			e.printStackTrace();
 		}
 	}
-	public void loadDrivers( String file)throws IOException{
+	
+	/**
+	 * Reads in drivers from the specified file and adds them to a list of drivers
+	 * @param file path of a file to be open and read from
+	 * @throws IOException Incompatible file
+	 */
+	 public void loadDrivers( String file)throws IOException{
 		try {
 			Scanner scan = new Scanner(new File(file));
 			while(scan.hasNextLine()) {
@@ -80,6 +105,10 @@ public class Dataset {
 			e.printStackTrace();
 		}
 	}
+	
+	 /**
+	 *Updates customer database 
+	 */
 	public void save() {
 		try {
 			FileWriter customerFile = new FileWriter( new File("data/customers.csv") );
@@ -94,21 +123,40 @@ public class Dataset {
 	}
 	
 	
+	/**
+	 * @return name of the current database list
+	 */
 	public String getListName() {
 		return this.listName;
 	}
+	/**
+	 * Assigns the name of the list to the specified value
+	 * @param listName specified name to be assigned to
+	 */
 	public void setListName(String listName) {
 		this.listName=listName;
 	}
+	/**
+	 * @return list of customers in database
+	 */
 	public ArrayList<Customer> getCustomerList() {
 		return this.customersList;
 	}
+	/**
+	 * @param customersList ArrayList of customers to be assigned to
+	 */
 	public void setCustomersList(ArrayList<Customer> customersList) {
 		this.customersList=customersList;
 	}
+	/**
+	 * @return list of groceries in database 
+	 */
 	public ArrayList<Item> getItemsList() {
 		return this.itemsList;
 	}
+	/**
+	 * @return list of drivers in databaase
+	 */
 	public ArrayList<Driver> getDriversList() {
 		return this.driversList;
 	}

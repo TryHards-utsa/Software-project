@@ -27,7 +27,7 @@
          <font>
             <Font size="19.0" />
          </font></Text>
-      <Button layoutX="402.0" layoutY="314.0" mnemonicParsing="false" onAction="#carthandle" prefHeight="25.0" prefWidth="116.0" text="Go to checkout">
+      <Button layoutX="402.0" layoutY="319.0" mnemonicParsing="false" onAction="#carthandle" prefHeight="25.0" prefWidth="116.0" text="Go to checkout">
          <font>
             <Font size="14.0" />
          </font></Button>

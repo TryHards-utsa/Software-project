@@ -71,6 +71,7 @@ public class Register implements Initializable, EventHandler<ActionEvent> {
 				}else if(!existCustomer(emailField.getText())){
 					try {
 						ArrayList<Item> tmpList = new ArrayList<Item>();
+						tmpList.add(new Item("0",0));
 						Customer tmp = new Customer(name.getText(), addressField.getText(), password.getText(), emailField.getText(), tmpList );
 						//write customer to file
 						stock.addCustomer(tmp);

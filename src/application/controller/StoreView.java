@@ -85,6 +85,7 @@ public class StoreView implements Initializable {
 			e.printStackTrace();
 		}
 		groceryList.getItems().addAll( stock.getItemsList() );
+		cartList.getItems().addAll(currentCustomer.getCart());
 	}
 	
 	public void addtotal() {

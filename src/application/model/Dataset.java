@@ -116,12 +116,24 @@ public class Dataset {
 			FileWriter customerFile = new FileWriter( new File("data/customers.csv") );
 			for (int i=0;i<customersList.size();i++) {
 				Customer customerData=customersList.get(i);
-				customerFile.write(customerData.customerName+","+customerData.address+","+customerData.password+","+customerData.email+",\n");
+				customerFile.write(customerData.customerName+","+customerData.address+","+customerData.password+","+customerData.email+","+cartToStringSave(customerData)+"\n");
 			}
 			customerFile.close();	
 		}catch( IOException e ) {
 			e.printStackTrace();
 		}	
+	}
+	
+	public String cartToStringSave(Customer customer){
+		String cartSave="";
+		if (customer.cart.size()!=0 ) {
+			for (int i=0;i<customer.cart.size();i++) {
+				cartSave += customer.cart.get(i).itemName+"+";
+			}
+		}else {
+			return "0";
+		}
+		return cartSave;
 	}
 	
 	

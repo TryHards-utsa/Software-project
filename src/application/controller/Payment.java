@@ -33,7 +33,6 @@ public class Payment {
 				FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/DriverAssign.fxml" ) );
 				Parent root1 = loader.load();
 				DriverAssign tmp = (DriverAssign) loader.getController();
-				
 				if( !quickDeliveryButton.isSelected() && deliveryDate.getText().trim().isEmpty() ) { 
 					error.setText("Select one: quick delivery option or enter a date");
 				} else if( quickDeliveryButton.isSelected() && !deliveryDate.getText().trim().isEmpty() ) {
@@ -63,7 +62,7 @@ public class Payment {
 			tmpList.getItems().addAll(currentCustomer.getCart());
 			tmp.setCartList(tmpList);
 			
-			Scene scene1 = new Scene( root1, 350, 600 );
+			Scene scene1 = new Scene( root1, 600, 350 );
 			Main.stage.setScene(scene1);
 			Main.stage.show();
 			

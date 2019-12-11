@@ -30,6 +30,7 @@ public class StoreView implements Initializable {
 	public void carthandle(ActionEvent event) {
 		try {
 			addtotal();
+			System.out.println("hello");
 			FXMLLoader loader = new FXMLLoader( getClass().getResource( "../view/Cart.fxml" ) );
 			Parent root1 = loader.load();
 			Checkout tmp = (Checkout) loader.getController();

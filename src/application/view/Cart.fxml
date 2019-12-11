@@ -27,6 +27,9 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Label fx:id="totalamt" layoutX="484.0" layoutY="175.0" prefHeight="25.0" prefWidth="56.0" />
+      <Label fx:id="totalamt" layoutX="484.0" layoutY="175.0" prefHeight="25.0" prefWidth="56.0">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
    </children>
 </AnchorPane>

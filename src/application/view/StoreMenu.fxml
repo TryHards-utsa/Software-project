@@ -41,7 +41,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="337.0" layoutY="277.0" text="Before you chekcout, checkout this" textFill="RED">
+      <Label layoutX="337.0" layoutY="277.0" text="Before you checkout, checkout this" textFill="RED">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -67,7 +67,7 @@ public class StoreView implements Initializable {
 			groceryList.getItems().remove(tmp);
 			cartList.getItems().add(tmp);
 			currentCustomer.getCart().add(tmp);
-			searchField.clear();
+			searchField.clear(); 
 		}
 		
 	}

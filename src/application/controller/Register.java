@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import application.Main;
 import application.model.Customer;
 import application.model.Dataset;
+import application.model.Item;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -43,6 +44,7 @@ public class Register implements Initializable, EventHandler<ActionEvent> {
 	Text error;	
 	Dataset customerData;
 	private ArrayList<Customer> customerList;
+	private Dataset stock;
 
 	@Override
 	public void handle(ActionEvent arg0) {		
@@ -68,6 +70,12 @@ public class Register implements Initializable, EventHandler<ActionEvent> {
 					error.setText("All fields must be filled, please try again");
 				}else if(!existCustomer(emailField.getText())){
 					try {
+						ArrayList<Item> tmpList = new ArrayList<Item>();
+						Customer tmp = new Customer(name.getText(), addressField.getText(), password.getText(), emailField.getText(), tmpList );
+						//write customer to file
+						stock.addCustomer(tmp);
+						stock.save();
+						
 						Parent root1 = FXMLLoader.load( getClass().getResource( "../view/Start.fxml" ) ); 
 						Scene scene1 = new Scene( root1, 597, 412 );
 						Main.stage.setScene(scene1);
@@ -107,7 +115,7 @@ public class Register implements Initializable, EventHandler<ActionEvent> {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		Dataset stock = new Dataset( "Current Customers" );
+		stock = new Dataset( "Current Customers" );
 		try {
 			stock.loadCustomer("data/customers.csv");
 		} catch (IOException e) {

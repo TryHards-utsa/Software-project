@@ -42,6 +42,10 @@ public class Payment {
 					Scene scene = new Scene( root1, 600, 450 );
 					Main.stage.setScene(scene);
 					Main.stage.show();
+				} else {
+					Scene scene = new Scene( root1, 600, 450 );
+					Main.stage.setScene(scene);
+					Main.stage.show();
 				}
 				
 				
